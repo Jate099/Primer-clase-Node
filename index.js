@@ -1,12 +1,24 @@
 var express = require('express');
 var app = express();
 
+app.use(express.static('public'));
+
+console.log(__dirname);
+
 app.get('/', function(req, res) {
-  res.send('Hola mundo!');
+  res.sendFile(__dirname + '/public/home.html');
 });
 
-app.get('/tienda', function(req, res) {
-    res.send('Funciona la tienda!');
+app.get('/contacto', function(request, response) {
+    response.send('Funciona contacto!');
+  });
+
+  app.get('/sobre-mi', function(request, response) {
+    response.send('Funciona sobre-mi!');
+  });
+
+  app.get('/portafolio', function(request, response) {
+    response.send('Funciona portafolio!');
   });
 
 app.listen(3000, function() {
