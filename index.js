@@ -3,10 +3,13 @@ var app = express();
 
 app.use(express.static('public'));
 
+var contador = 0;
+
 console.log(__dirname);
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/home.html');
+  contador++;
 });
 
 app.get('/contacto', function(request, response) {
