@@ -5,20 +5,25 @@ const fs = require('fs');
 
 app.use(express.static('public'));
 
-var contador = 0;
+var contador = {
+  home = 0,
+  contacto = 0,
+};
 
 console.log(__dirname);
 
 app.get('/', function (req, response) {
   response.sendFile(__dirname + '/public/home.html');
 
-  contador++;
+  contador.home++;
 
   function archivoEscrito(){
     console.log("el archivo se creo");
 }
 
-fs.writeFile('message.txt', contador, 'utf8', archivoEscrito);
+//let vistas = 'visitas home: ' + contador.home + ' vistas contacto: ' + contador.contacto;
+
+fs.writeFile('message.txt', 'visitas: ' + contador.home, 'utf8', archivoEscrito);
 
 //leer archivo
 fs.readFile('message.txt', 'utf8', function(err, data){
