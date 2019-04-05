@@ -1,16 +1,11 @@
-button{
-    background-color: rgb(31, 77, 228);
-    height: 50px;
-    width: 80px;
-    border-radius: 10px;
-
-    .linkB{
-        color: white;
-        text-decoration: none;
-    }
+.linkB{
+    background: blue;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.link{
+.contacto{
     color: red;
-    text-decoration: none;
 }
