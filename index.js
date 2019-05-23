@@ -30,11 +30,11 @@ productos.push({
 
 console.log(__dirname);
 
-app.get('/', function (req, response) {
+/*app.get('/', function (req, response) {
   response.render('home');
-});
+});*/
 
-app.get('/tienda', function (req, response) {
+app.get('/', function (req, response) {
   response.sendFile(__dirname + '/public/home.html');
 
   contador.home++;
